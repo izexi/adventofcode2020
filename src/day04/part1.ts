@@ -1,5 +1,15 @@
 import { parseInput } from '../util';
+import { fieldPatterns } from './part2';
 
-const input = parseInput();
+const input = parseInput({ split: { mapper: false, delimiter: '\n\n' } });
 
-// TODO: Complete Part 1
+export default input.reduce(
+  (valid, passport) =>
+    valid +
+    Number(
+      Object.keys(fieldPatterns).every((reqField) =>
+        passport.includes(`${reqField}:`)
+      )
+    ),
+  0
+);
