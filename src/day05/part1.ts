@@ -1,5 +1,10 @@
 import { parseInput } from '../util';
 
-const input = parseInput();
+export const ids = parseInput({
+  split: {
+    mapper: (seat) =>
+      parseInt(seat.replace(/F|L/g, '0').replace(/B|R/g, '1'), 2),
+  },
+});
 
-// TODO: Complete Part 1
+export default Math.max(...ids);
