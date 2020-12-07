@@ -1,5 +1,8 @@
 import { parseInput } from '../util';
 
-const input = parseInput();
+const input = parseInput({ split: { mapper: false, delimiter: '\n\n' } });
 
-// TODO: Complete Part 1
+export default input.reduce(
+  (sum, group) => sum + new Set([...group.replace(/\n/g, '')]).size,
+  0
+);
