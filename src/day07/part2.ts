@@ -1,5 +1,12 @@
-import { parseInput } from '../util';
+import { bagsMap } from './part1';
 
-const input = parseInput();
+const individualBags = (colour: string, map = bagsMap): number =>
+  map
+    .get(colour)!
+    .reduce(
+      (total, { amount, colour }) =>
+        total + amount * individualBags(colour, map),
+      1
+    );
 
-// TODO: Complete Part 2
+export default individualBags('shiny gold') - 1;
