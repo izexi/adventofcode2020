@@ -1,5 +1,3 @@
-import { parseInput } from '../util';
+import { numSpokenAt } from './part1';
 
-const input = parseInput();
-
-// TODO: Complete Part 2
+export default numSpokenAt(30000000);
