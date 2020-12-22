@@ -1,5 +1,6 @@
-import { parseInput } from '../util';
+import { allergensMap } from './part1';
 
-const input = parseInput();
-
-// TODO: Complete Part 2
+export default [...allergensMap.entries()]
+  .sort()
+  .map(([, ingredients]) => ingredients.values().next().value)
+  .join(',');
