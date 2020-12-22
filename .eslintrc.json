@@ -23,6 +23,7 @@
         "prettier/prettier": ["error", { "singleQuote": true }],
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
-        "no-constant-condition": ["error", { "checkLoops": false }]
+        "no-constant-condition": ["error", { "checkLoops": false }],
+        "@typescript-eslint/ban-ts-comment": "off"
     }
 }
